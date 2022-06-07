@@ -48,12 +48,4 @@ const getAllValue = async () => {
     return values;
 }
 
-const setCurrent = (value) => {
-    current = value;
-}
-
-const getCurrent = () => {
-    return current
-}
-
-export {checkLog,setValue,addData,getAllValue,setCurrent,getCurrent};
+export {checkLog,setValue,addData,getAllValue};
