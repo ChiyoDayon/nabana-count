@@ -21,14 +21,14 @@ function ClickArea() {
 
     const click = () => {
         setClicked(true);
-        console.log("click");
+        //console.log("click");
         play();
         setData();
     }
 
     const notClick = () => {
         setClicked(false);
-        console.log("not click");
+        //console.log("not click");
     }
 
     const check = async() => {
@@ -38,7 +38,7 @@ function ClickArea() {
 
     useEffect(() => {
         check();
-        console.log("start");
+        //console.log("start");
     }, []);
 
     return(
