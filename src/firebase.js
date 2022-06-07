@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCx4i516b8cRVmpDQlLp4UZxv3SBkXK104",
-  authDomain: "fir-learn-4d561.firebaseapp.com",
-  projectId: "fir-learn-4d561",
-  storageBucket: "fir-learn-4d561.appspot.com",
-  messagingSenderId: "795479875849",
-  appId: "1:795479875849:web:3311a1ad7dd1e3c7e633d8",
-  measurementId: "G-1K2XJ17M5B"
+  apiKey: `${import.meta.env.VITE_API_KEY}`,
+  authDomain: `${import.meta.env.VITE_AUTH_DOMAIN}`,
+  projectId: `${import.meta.env.VITE_PROJECT_ID}`,
+  storageBucket: `${import.meta.env.VITE_STORAGE_BUCKET}`,
+  messagingSenderId: `${import.meta.env.VITE_MESSAGING_SENDER_ID}`,
+  appId: `${import.meta.env.VITE_APP_ID}`,
+  measurementId: `${import.meta.env.VITE_COLLECTION}`,
 };
 
 const app = initializeApp(firebaseConfig);
