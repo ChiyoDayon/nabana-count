@@ -4,7 +4,7 @@ import normalReaction from './../assets/false.png';
 import smileReaction from './../assets/true.png';
 import useSound from "use-sound";
 import nabanaNoise from './../assets/nabana_noise.wav';
-import { checkLog, setValue, addData } from "./scoreHandle";
+import { checkLog, setValue, addData, setCurrent } from "./scoreHandle";
 
 function ClickArea() {
 
@@ -15,6 +15,7 @@ function ClickArea() {
     const setData = () =>{
         if (count !== 'Loading') {
             setCount((count)=>count+1);  
+            setCurrent(count);
             addData();
         }
     }
@@ -33,7 +34,9 @@ function ClickArea() {
 
     const check = async() => {
         await checkLog();
-        setCount(await setValue());
+        const value = await setValue();
+        setCount(value);
+        setCurrent(value);
     }
 
     useEffect(() => {

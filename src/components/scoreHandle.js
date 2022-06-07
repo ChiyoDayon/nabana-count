@@ -1,6 +1,8 @@
 import { collection, doc, getDoc, getDocs, increment, setDoc, updateDoc } from "@firebase/firestore";
 import db from "../firebase";
 
+let current = 0;
+
 const database = {
     collection: 'counter',
     id: 'dev'
@@ -25,8 +27,8 @@ const checkLog = async () => {
 
 const addData = async () => {
     await updateDoc(doc(db, database.collection, database.id), {
-        //value: increment(1)
-        value: (await setValue())+1
+        value: increment(1)
+        //value: await setValue()+1
     });
 }
 
@@ -46,4 +48,12 @@ const getAllValue = async () => {
     return values;
 }
 
-export {checkLog,setValue,addData,getAllValue};
+const setCurrent = (value) => {
+    current = value;
+}
+
+const getCurrent = () => {
+    return current
+}
+
+export {checkLog,setValue,addData,getAllValue,setCurrent,getCurrent};
